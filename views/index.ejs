@@ -1,0 +1,79 @@
+<%- include("_header") -%>
+
+<noscript>Javascript must be enabled to use this application</noscript>
+
+<header class="banner">
+  <nav class="container">
+    <h1 class="logo">TODO</h1>
+    
+    <button class="theme-btn">Dark mode 
+      <img
+      src="images/icon-moon.svg"
+      alt="change theme btn"
+      />
+    </button>
+
+  </nav>
+
+  <form class="todo-input container" action="/" method="post">
+    <input
+      type="text"
+      name="todoInput"
+      placeholder="Create a new todo..."
+      autocomplete="off"
+      required
+    />
+
+    <button type="submit" class="add-todo-btn">+</button>
+  </form>
+</header>
+
+<main>
+  <div class="todos-container">
+    <% todos.forEach(todo => { %>
+      <div class="single-todo">
+        <form class="todo-content" action="/update" method="post">
+
+          <% if (todo.status === 'pending') { %>
+            <button class="check-btn" type="submit" name="id" value="<%=todo._id%>"></button>
+            <p class="todo-description"><%=todo.todoContent%></p>
+          <% } else { %>
+            <button class="check-btn completed-check-btn" type="submit" name="id" value="<%=todo._id%>">
+              <img src="images/icon-check.svg" alt="">
+            </button>
+            <p class="todo-description completed"><%=todo.todoContent%></p>
+          <% } %>
+        </form>
+
+        <form action="/delete" method="post" class="">
+          <button class="delete-todo-btn" type="submit" name="id" value="<%=todo._id%>">
+            <img src="images/icon-cross.svg" alt="delete todo button" />
+          </button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+
+  <div class="todos-controller container">
+    <p class="remaining-count">
+      <span class="todo-counter">
+        <%= todosRemaining %>
+      </span> items remaining
+    </p>
+    <form action="/delete-completed" method="post">
+      <button class="clear-completed-btn">Clear completed</button>
+    </form>
+  </div>
+
+  <div class="todos-filter container">
+    <p class="todo-status todos-filter__All">All</p>
+    <p class="todo-status todos-filter__Active">Active</p>
+    <p class="todo-status todos-filter__Completed">Completed</p>
+  </div>
+
+  <div class="container extra-info">
+    <p>Drag and drop task items to reorder the list</p>
+  </div>
+</main>
+
+<%- include("_footer") -%>

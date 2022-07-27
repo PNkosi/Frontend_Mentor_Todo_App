@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  background-color: #161722;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(168, 113, 255);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.extra-info {
+  padding: 20px 20px;
+  background: #25273c;
+  color: #777a92;
+  margin-top: 20px;
+}
+.extra-info p {
+  text-align: center;
+}
+.banner {
+  background: url("/images/bg-mobile-dark.jpg") center/cover no-repeat;
+  color: #cacde8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+}
+.banner nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.banner nav .logo {
+  letter-spacing: 5px;
+}
+
+
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #393a4c;
+  color: #e4e5f1;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+}
+
+
+.theme-btn img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.todo-input {
+  background-color: #25273c;
+  margin-top: 40px;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px;
+  padding-right: 20px;
+}
+.banner .todo-input input {
+  background-color: transparent;
+  width: 100%;
+  padding: 20px 20px 20px 0;
+  color: #777a92;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  color: #cacde8;
+  margin: 0 10px;
+}
+
+.add-todo-btn {
+  background: #cacde8;
+  color: #25273c;
+  font-weight: bolder;
+  font-size: 28px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+}
+
+main {
+  margin-bottom: 20px;
+}
+
+.todos-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: -20px;
+  background-color: #25273c;
+  border-radius: 5px;
+}
+.single-todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px 20px;
+  border-bottom: 1px solid #393a4c;
+}
+
+.todo-content {
+  display: flex;
+}
+
+.check-btn {
+  height: 25px;
+  width: 25px;
+  border: 1px solid #cacde8;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.completed-check-btn {
+  background: linear-gradient(#c058f3, #57ddff)
+}
+
+
+.todo-description {
+  padding: 0 10px;
+  color: #cacde8;
+  cursor: pointer;
+  align-self: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #393a4c;
+}
+
+.checked-btn {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#57ddff),
+    to(#c058f3)
+  );
+  background: linear-gradient(to right, #57ddff, #c058f3);
+}
+
+.delete-todo-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.hide-todo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .single-todo,
+  .todos-container {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+.todos-controller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 20px;
+  background: #25273c;
+  color: #777a92;
+}
+.clear-completed-btn {
+  cursor: pointer;
+  background-color: transparent;
+  color: #777a92;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+.clear-completed-btn:hover {
+  color: #cacde8;
+}
+
+.todos-filter {
+  background-color: #25273c;
+  color: #777a92;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.todo-status {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.todos-filter .todo-status:hover {
+  cursor: pointer;
+  color: #e4e5f1;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+
+footer {
+  background: #161722;
+  color: #cacde8;
+  text-align: center;
+  margin-top:20px;
+}
+
+footer p {
+  line-height: 2;
+}
+/*# sourceMappingURL=main.min.css.map */
+
+
+/* LIght Theme */
+.light-theme-bg {
+  background: #e4e5f1;
+  color: #25273c;
+}
+
+.light-bg-img {
+  background: url("/images/bg-mobile-light.jpg") center/cover no-repeat;
+}
+
+.light-theme-btn {
+  background: #393a4c;
+  color: #cacde8;
+}
+
+.light-theme-color {
+  color: #25273c;
+}
